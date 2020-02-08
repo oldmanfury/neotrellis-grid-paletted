@@ -1,7 +1,9 @@
 # neotrellis-grid-paletted
-Teensy code from okyeron modified with gradient color palettes.  Boots up with all 8 available palettes showing - push a button on one to select.
+Teensy code from okyeron modified with gradient color palettes.  Boots up with all 8 available palettes showing - push a button on one to select.  
 
-Brightness parameter sets overall brightness - with an 18 W USBC supply powering fates, mine is OK at 128 (out of 256) brightness.
+Leftmost column selects overall brightness - watch the Fates LED go out if you draw too much current, then either back down, or count on a patch not lighting up as many LEDs as the palette selector.
+
+Lower right hand corner three button press gets you back to selection now.  May do weird things if Fates is spewing data while selecting - I recommend pausing the patch if possible.
 
 I used an eyedropper program to get RGB values from these palettes:
 https://matplotlib.org/tutorials/colors/colormaps.html

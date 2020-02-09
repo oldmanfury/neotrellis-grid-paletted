@@ -24,7 +24,7 @@ uint32_t hexColor;
 
 // This assumes you are using a USB breakout board to route power to the board 
 // If you are plugging directly into the teensy, you will need to adjust this brightness to a much lower value
-int BRIGHTNESS = 255; // overall grid brightness - use gamma table below to adjust levels
+int BRIGHTNESS = 128; // overall grid brightness - use gamma table below to adjust levels
 int resetkeyspressed = 0;
 boolean allthreekeys = false;
 
@@ -54,7 +54,7 @@ int prevLedBuffer[mdp.MAXLEDCOUNT];
 Adafruit_NeoTrellis trellis_array[NUM_ROWS / 4][NUM_COLS / 4] = {
   { Adafruit_NeoTrellis(0x33), Adafruit_NeoTrellis(0x31), Adafruit_NeoTrellis(0x2F), Adafruit_NeoTrellis(0x2E)}, // top row
   { Adafruit_NeoTrellis(0x35), Adafruit_NeoTrellis(0x39), Adafruit_NeoTrellis(0x3F), Adafruit_NeoTrellis(0x37) } // bottom row
-};
+};//0x39 0x3B
 Adafruit_MultiTrellis trellis((Adafruit_NeoTrellis *)trellis_array, NUM_ROWS / 4, NUM_COLS / 4);
 
 // gamma table for 16 levels of brightness

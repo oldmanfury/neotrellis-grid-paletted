@@ -24,7 +24,7 @@ uint32_t hexColor;
 
 // This assumes you are using a USB breakout board to route power to the board 
 // If you are plugging directly into the teensy, you will need to adjust this brightness to a much lower value
-int BRIGHTNESS = 128; // overall grid brightness - use gamma table below to adjust levels
+int BRIGHTNESS = 127; // overall grid brightness - use gamma table below to adjust levels
 int resetkeyspressed = 0;
 boolean allthreekeys = false;
 
@@ -53,8 +53,8 @@ int prevLedBuffer[mdp.MAXLEDCOUNT];
 // NeoTrellis setup
 Adafruit_NeoTrellis trellis_array[NUM_ROWS / 4][NUM_COLS / 4] = {
   { Adafruit_NeoTrellis(0x33), Adafruit_NeoTrellis(0x31), Adafruit_NeoTrellis(0x2F), Adafruit_NeoTrellis(0x2E)}, // top row
-  { Adafruit_NeoTrellis(0x35), Adafruit_NeoTrellis(0x39), Adafruit_NeoTrellis(0x3F), Adafruit_NeoTrellis(0x37) } // bottom row
-};//0x39 0x3B
+  { Adafruit_NeoTrellis(0x35), Adafruit_NeoTrellis(0x3B), Adafruit_NeoTrellis(0x3F), Adafruit_NeoTrellis(0x37) } // bottom row
+};//0x39 mine is wrong - set to 0x3B
 Adafruit_MultiTrellis trellis((Adafruit_NeoTrellis *)trellis_array, NUM_ROWS / 4, NUM_COLS / 4);
 
 // gamma table for 16 levels of brightness
@@ -98,10 +98,10 @@ const uint8_t allpalettes[9][3][16] = {
   {0,0,0,1,3,5,9,14, 21, 30, 54, 82, 121,154,228,249},
   {0,80, 162,215,252,248,217,164,100,9,0,0,0,0,0,0}
 },
-{//copper
-  {0,40, 54, 80, 97, 113,139,152,179,208,234,255,255,255,255,255},
-  {0,26, 34, 50, 61, 71, 88, 96, 113,132,148,161,174,184,192,199},
-  {0,16, 21, 32, 39, 45, 56, 61, 72, 84, 94, 102,110,117,122,126}
+{//white
+  {20,35,50,65,80,95,110,125,140,155,170,185,200,215,230,255},
+  {20,35,50,65,80,95,110,125,140,155,170,185,200,215,230,255},
+  {20,35,50,65,80,95,110,125,140,155,170,185,200,215,230,255}
 },
 {//blank
   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},

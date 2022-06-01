@@ -216,10 +216,10 @@ TrellisCallback keyCallback(keyEvent evt){
       }
     }
     if (isInited == false && x>0){//-------select-the--palette---------
-        selected_palette = y;
+        selected_palette = y+8*page;
         isInited=true;
         for(int i=0; i<8; i++){
-           colorpalettedisplay(y+8*page,i);
+           colorpalettedisplay(selected_palette,i);
         }
         trellis.show();  
   //      sendLeds();
